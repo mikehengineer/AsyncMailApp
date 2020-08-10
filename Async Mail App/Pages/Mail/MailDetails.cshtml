@@ -1,0 +1,14 @@
+﻿@page "{mailId:int}"
+@model Async_Mail_App.Pages.Mail.MailBodyModel
+@{
+    ViewData["Title"] = "MailBody";
+}
+
+<h1>Id: @Model.MailObject.Id</h1>
+<div>Sender: @Model.MailObject.Sender</div>
+<div>Recipient: @Model.MailObject.Recipient</div>
+<div>Subject: @Model.MailObject.Subject</div>
+<div>Body: @Model.MailObject.Body</div>
+<div>Time: @Model.MailObject.Time</div>
+
+<a asp-page="./MailDirectory" class="btn btn-default">Mail List</a>

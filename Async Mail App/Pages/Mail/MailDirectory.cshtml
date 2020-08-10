@@ -1,0 +1,52 @@
+﻿@page
+@model Async_Mail_App.Pages.MailModel
+@{
+}
+
+<h1>Mailer</h1>
+
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">
+                    <i class="fa fa-search">Search</i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+   <table class="table">
+
+        @foreach (var mail in Model.mailbag)
+        {
+        <tr>
+            <td>@mail.Id</td>
+            <td>@mail.Sender</td>
+            <td>@mail.Recipient</td>
+            <td>@mail.Subject</td>
+            <td>@mail.Body</td>
+            <td>@mail.Time</td>
+            <td>
+                <a class="btn  btn-sm btn-dark"
+                   asp-page="./MailDetails"
+                   asp-route-mailId="@mail.Id">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">View</span>
+                </a>
+                <a class="btn  btn-sm btn-dark"
+                   asp-page="./Delete"
+                   asp-route-mailId="@mail.Id">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">Delete</span>
+                </a>
+            </td>
+        </tr>
+        }
+    </table>
+
+@foreach(var mail in Model.mailbag)
+{
+    <partial name="_Summary" model="mail" />
+}

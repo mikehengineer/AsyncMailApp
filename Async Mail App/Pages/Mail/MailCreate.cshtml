@@ -1,0 +1,24 @@
+﻿@page
+@model Async_Mail_App.Pages.Mail.MailCreate
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for=MailObject.Sender>Sender's Email Address</label>
+        <input asp-for=MailObject.Sender class="form-control" type="text" placeholder="Enter email">
+    </div>
+    <div class="form-group">
+        <label asp-for=MailObject.Recipient>Recipient's Email Address</label>
+        <input asp-for=MailObject.Recipient class="form-control" type="text" placeholder="Recipient">
+    </div>
+    <div class="form-group">
+        <label asp-for=MailObject.Subject>Subject</label>
+        <input asp-for=MailObject.Subject class="form-control" type="text" placeholder="Subject">
+    </div>
+    <div class="form-group">
+        <label asp-for=MailObject.Body>Email Body</label>
+        <textarea asp-for=MailObject.Body class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>

@@ -1,0 +1,25 @@
+﻿@using AsyncMail.Core 
+@model MailObject
+
+
+<div class="card>
+    <div class="card-header">
+        <h3>@Model.Sender</h3>
+    </div>
+    <div class="card-body">
+        <span>Subject: @Model.Subject</span>
+        <span>Body: @Model.Body</span>
+    </div>
+    <div class="card-footer">
+        <a class="btn  btn-sm btn-dark"
+           asp-page="./MailDetails"
+           asp-route-mailId="@Model.Id">
+            <span class="glyphicon glyphicon-star" aria-hidden="true">View</span>
+        </a>
+        <a class="btn  btn-sm btn-dark"
+           asp-page="./Delete"
+           asp-route-mailId="@Model.Id">
+            <span class="glyphicon glyphicon-star" aria-hidden="true">Delete</span>
+        </a>
+    </div>
+</div>
